@@ -14,7 +14,6 @@ body {
   transform: translate(-50%, -50%);
   display: flex;
   border: 0px solid;
-  border-radius: 7px;
 }
 
 .card {
@@ -26,13 +25,13 @@ body {
 }
 
 .player-1-card  {
-  border-bottom-left-radius: 7px;
-  border-top-left-radius: 7px;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 }
 
 .player-2-card  {
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 .card-title {
@@ -71,10 +70,23 @@ body {
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border: 0px solid;
+  border-radius: 1.5rem;
+  opacity: 0.7;
+}
+
+.btn-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
 }
 
 .new-game {
-  top: 5%;
+  top: 7%;
 }
 
 .roll-dice  {
@@ -82,5 +94,8 @@ body {
 }
 
 .hold {
-  bottom: 20%;
+  bottom: 17%;
 }
+
+
+
