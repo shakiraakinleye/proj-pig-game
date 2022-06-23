@@ -1,13 +1,14 @@
 body {
   width: 100vw;
   min-height: 100vh;
-  background-image: linear-gradient(135deg, rgb(255, 75, 105), rgb(143, 6, 143));
+  background-image: linear-gradient(135deg, rgb(255, 75, 105), rgb(206, 47, 74), rgb(143, 6, 143));
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+
 }
 
 .game-container {
-  width: 70%;
+  width: 60%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -40,7 +41,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.dice-value {
+.high-score-value {
   font-size: 3rem;
   color: rgb(232, 43, 74);
   margin-bottom: 5rem;
@@ -76,7 +77,7 @@ body {
   padding: 0.35rem 0.75rem;
   border: 0px solid;
   border-radius: 1.5rem;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .btn-icon {
@@ -97,5 +98,17 @@ body {
   bottom: 17%;
 }
 
+.dice-image {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 3rem;
+}
 
 
+/* 
+@media screen and (max-width: 1000px) {
+  
+} */
