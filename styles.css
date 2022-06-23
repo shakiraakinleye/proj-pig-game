@@ -66,9 +66,21 @@ body {
   color: #fff;
 }
 
-
 .btn  {
   position: absolute;
-  /* this is temp, just to get them out of the way while i style the cards */
-  display: none;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.new-game {
+  top: 5%;
+}
+
+.roll-dice  {
+  bottom: 30%;
+}
+
+.hold {
+  bottom: 20%;
 }
