@@ -17,3 +17,58 @@ body {
   border-radius: 7px;
 }
 
+.card {
+  width: 50%;
+  padding: 4rem 0;
+  background-color: rgb(250, 190, 200);
+  text-align: center;
+  border: 0px solid;
+}
+
+.player-1-card  {
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+}
+
+.player-2-card  {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.card-title {
+  font-size: 2.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.dice-value {
+  font-size: 3rem;
+  color: rgb(232, 43, 74);
+  margin-bottom: 5rem;
+}
+
+.score-container  {
+  display: inline-block;
+  background-color: rgb(232, 43, 74);
+  padding: 1rem 2.5rem;
+  border: 0px solid;
+  border-radius: 5px;
+}
+
+.score-title  {
+  font-size: 0.75rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.score-value  {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+
+.btn  {
+  position: absolute;
+  /* this is temp, just to get them out of the way while i style the cards */
+  display: none;
+}
