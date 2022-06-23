@@ -1,0 +1,26 @@
+html, body, header, nav, section, div, p, footer, button, span, h1, h2, h3, h4, h5, h6, ul, li, svg, a, img 	{
+	margin: 0;
+	padding: 0;	
+	box-sizing: border-box;
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+header, nav, section, div, p, button, h1, h2, h3, h4, h5, h6, ul, footer	{
+	display: block;
+}
+
+
+ul	{
+	list-style-type: none;
+}
+
+a, button	{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:focus, button:focus	{
+	outline: 0;
+}
