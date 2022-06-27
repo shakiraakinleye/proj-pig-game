@@ -42,13 +42,13 @@ body {
   margin-bottom: 1rem;
 }
 
-.high-score-value {
+.total-score-value {
   font-size: 3rem;
   color: rgb(232, 43, 74);
   margin-bottom: 5rem;
 }
 
-.score-container  {
+.current-score-container  {
   display: inline-block;
   background-color: rgb(232, 43, 74);
   padding: 1rem 2.5rem;
@@ -56,13 +56,13 @@ body {
   border-radius: 5px;
 }
 
-.score-title  {
+.current-score-title  {
   font-size: 0.75rem;
   color: #fff;
   margin-bottom: 0.75rem;
 }
 
-.score-value  {
+.current-score-value  {
   font-size: 1.5rem;
   color: #fff;
 }
@@ -108,8 +108,7 @@ body {
   height: 3rem;
 }
 
-.overlay-1, .overlay-2  {
-  display: none;
+.overlay  {
   position: absolute;
   top: 0;
   left: 0;
@@ -118,6 +117,13 @@ body {
   background-color: rgba(227, 61, 61, 0.3);
 }
 
+.active {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
 
 /* 
 @media screen and (max-width: 1000px) {
