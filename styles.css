@@ -40,6 +40,7 @@ body {
   font-size: 2.25rem;
   font-weight: 500;
   margin-bottom: 1rem;
+  color: inherit;
 }
 
 .total-score-value {
@@ -124,6 +125,13 @@ body {
 .hidden {
   display: none;
 }
+
+.winner-card {
+  background-color: rgb(48, 47, 47);
+  color: rgb(232, 43, 74);
+
+}
+
 
 /* 
 @media screen and (max-width: 1000px) {

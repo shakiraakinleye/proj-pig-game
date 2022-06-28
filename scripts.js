@@ -9,12 +9,16 @@ const rollDice = document.querySelector('.roll-dice');
 const holdGame = document.querySelector('.hold');
 const current1El = document.querySelector('.player-1-current-score');
 const current2El = document.querySelector(".player-2-current-score");
+const hideDice = function () {
+  diceEl.classList.add("hidden");
+};
 
 // Starting conditions
 score1El.textContent = 0;
 score2El.textContent = 0;
-diceEl.classList.add('hidden');
+hideDice();
 
+let gameOn = true;
 const scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 1;
@@ -44,25 +48,27 @@ const switchPlayer = function () {
 // 3. Check if its a 1. If true, games goes to next player.
 
 rollDice.addEventListener('click', function () {
-  // 1
-  const dice = Math.ceil(Math.random() * 6);
-  
-  // 2
-  diceEl.classList.remove('hidden');
-  diceEl.src = `images\\dice-${dice}.png`;
 
-  // 3
-  if (dice !== 1) {
-    currentScore += dice;
+  if (gameOn) {
+    // 1
+    const dice = Math.ceil(Math.random() * 6);
 
-    // change the current score of the active player
-    document.querySelector(`.player-${activePlayer}-current-score`).textContent = currentScore;
+    // 2
+    diceEl.classList.remove("hidden");
+    diceEl.src = `images\\dice-${dice}.png`;
 
+    // 3
+    if (dice !== 1) {
+      currentScore += dice;
+
+      // change the current score of the active player
+      document.querySelector(
+        `.player-${activePlayer}-current-score`
+      ).textContent = currentScore;
+    } else {
+      switchPlayer();
+    }
   }
-  else {
-    switchPlayer();
-  }
-
 }) 
 
 
@@ -72,21 +78,35 @@ rollDice.addEventListener('click', function () {
 
 
 holdGame.addEventListener('click', function () {
-  // Add and assign the current sore of the active player
-  let currentPlayer = activePlayer - 1;
-  scores[currentPlayer] += currentScore; 
 
-  // Display score
-  document.querySelector(`.player-${activePlayer}-total-score`).textContent = scores[currentPlayer];
+  if (gameOn) {
+    // Add and assign the current sore of the active player
+    let currentPlayer = activePlayer - 1;
+    scores[currentPlayer] += currentScore;
 
-  // Check if total score >= 100
-  if (scores[currentPlayer] <= 100) {
-    switchPlayer()
-  } 
-  else {
-    // Finish the game
+    // Display score
+    document.querySelector(`.player-${activePlayer}-total-score`).textContent =
+      scores[currentPlayer];
+
+    // Check if total score >= 100
+    if (scores[currentPlayer] < 10) {
+      switchPlayer();
+    } else {
+      // Finish the game
+      gameOn = false;
+      hideDice();
+      document
+        .querySelector(`.player-${activePlayer}-card`)
+        .classList.add("winner-card");
+
+      document
+        .querySelector(`overlay-${activePlayer}`)
+        .classList.remove("active");
+
+    }
   }
-
-
-
 })
+
+// newGame.addEventListener('click', function () {
+//   playing = true;
+// })
