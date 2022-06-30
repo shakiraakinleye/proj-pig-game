@@ -108,7 +108,7 @@ holdGame.addEventListener('click', function () {
       scores[currentPlayer];
 
     // Check if total score >= 100
-    if (scores[currentPlayer] < 10) {
+    if (scores[currentPlayer] < 100) {
       switchPlayer();
     } else {
       // Finish the game
