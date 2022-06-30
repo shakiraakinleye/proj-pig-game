@@ -9,21 +9,37 @@ const rollDice = document.querySelector('.roll-dice');
 const holdGame = document.querySelector('.hold');
 const current1El = document.querySelector('.player-1-current-score');
 const current2El = document.querySelector(".player-2-current-score");
+const playerCard1 = document.querySelector(`.player-1-card`);
+const playerCard2 = document.querySelector(`.player-2-card`);
 const hideDice = function () {
   diceEl.classList.add("hidden");
 };
+let overlay1 = document.querySelector(".overlay-1");
+let overlay2 = document.querySelector(".overlay-2");
+let gameOn, scores, currentScore, activePlayer;
+  
 
 // Starting conditions
-score1El.textContent = 0;
-score2El.textContent = 0;
-hideDice();
 
-let gameOn = true;
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 1;
-let overlay1 = document.querySelector('.overlay-1');
-let overlay2 = document.querySelector(".overlay-2");
+const start = function () {
+  gameOn = true;
+  score1El.textContent = 0;
+  score2El.textContent = 0;
+  current1El.textContent = 0;
+  current2El.textContent = 0;
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 1;
+  playerCard1.classList.remove("winner-card");
+  playerCard2.classList.remove("winner-card");
+  overlay1.classList.add("active");
+  overlay2.classList.remove("active");
+  hideDice();
+};
+start();
+
+
+
 
 const switchPlayer = function () {
   // Change the activeplayer's score to 0
@@ -40,7 +56,10 @@ const switchPlayer = function () {
   // Change Overlay by toggling the class.
   overlay1.classList.toggle("active");
   overlay2.classList.toggle("active");
-}
+};
+
+
+
 
 // Roll Dice Function
 // 1. Generate a random dice roll
@@ -74,7 +93,7 @@ rollDice.addEventListener('click', function () {
 
 // when the player holds the game
 // 1. add current score to total score
-// 2. switch player if score  >= 100
+// 2. End game if score  >= 100
 
 
 holdGame.addEventListener('click', function () {
@@ -107,6 +126,4 @@ holdGame.addEventListener('click', function () {
   }
 })
 
-// newGame.addEventListener('click', function () {
-//   playing = true;
-// })
+newGame.addEventListener("click", start);
